@@ -1,71 +1,85 @@
-/* style.css — edit this file to change how the site looks */
-
+/* Page */
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
-  color: #333;
   margin: 0;
   padding: 0;
-}
-
-.container {
-  max-width: 600px;
-  margin: 50px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-h1 {
-  text-align: center;
-  color: #222;
-}
-
-form {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom right, #1a1a1a, #111);
+  font-family: Arial, sans-serif;
+  color: #ffffff;
 }
 
-label {
-  font-weight: bold;
+/* Glass Card */
+.glass {
+  width: 350px;
+  padding: 40px;
+  border-radius: 16px;
+  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.15);
 }
 
-input[type="text"] {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+/* Title */
+h1 {
+  margin-bottom: 25px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
-button {
-  padding: 10px;
-  font-size: 16px;
+/* Input */
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
   border: none;
-  background: #007bff;
+  font-size: 15px;
+  margin-bottom: 15px;
+  background: rgba(255,255,255,0.15);
   color: white;
-  border-radius: 4px;
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus {
+  background: rgba(255,255,255,0.25);
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.25);
+  font-size: 15px;
   cursor: pointer;
+  color: white;
+  transition: 0.25s;
 }
 
 button:hover {
-  background: #0056b3;
+  background: rgba(255,255,255,0.45);
 }
 
-.result {
-  margin-top: 20px;
-  padding: 10px;
-  background: #e9f7ef;
-  border: 1px solid #d4eedc;
-  border-radius: 4px;
+/* Result text */
+#result h2 {
+  margin-top: 25px;
+  margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 22px;
 }
 
-.error {
-  margin-top: 20px;
-  padding: 10px;
-  background: #fcebea;
-  border: 1px solid #f5c6cb;
-  color: #a94442;
-  border-radius: 4px;
+#result p {
+  opacity: 0.85;
+}
+
+/* Error text */
+#error {
+  margin-top: 12px;
+  color: #ff6b6b;
+  font-size: 14px;
 }
