@@ -39,14 +39,14 @@ async function loadUser(id) {
     avatarEl.innerHTML = `<span style="color:#9aa0aa">Loading user…</span>`;
 
     // info
-    const info = await getJSON(`${API}https://qnet.zip/apisite/users/v1/users/${id}`);
+    const info = await getJSON(`${API}https://cartii.fit/apisite/users/v1/users/${id}`);
     dispEl.textContent = info.displayName || 'Unknown';
     userEl.textContent = '@' + (info.name || id);
     descEl.textContent = info.description || '';
 
     // status
     try {
-      const s = await getJSON(`${API}https://qnet.zip/apisite/users/v1/users/${id}/status`);
+      const s = await getJSON(`${API}https://cartii.fit/apisite/users/v1/users/${id}/status`);
       const statusText = s?.status || s?.data?.status || s?.text || '—';
       statusEl.textContent = statusText.trim() !== '' ? statusText : '—';
       statusEl.style.color = '#9ca3af';
@@ -59,10 +59,10 @@ async function loadUser(id) {
 
     // avatar
     const avatarData = await getJSON(
-      `${API}https://qnet.zip/apisite/thumbnails/v1/users/avatar?userIds=${id}&size=420x420&format=png`
+      `${API}https://cartii.fit/apisite/thumbnails/v1/users/avatar?userIds=${id}&size=420x420&format=png`
     );
     let avatarUrl = avatarData?.data?.[0]?.imageUrl || '';
-    if (avatarUrl.startsWith('/')) avatarUrl = `https://qnet.zip${avatarUrl}`;
+    if (avatarUrl.startsWith('/')) avatarUrl = `https://cartii.fit${avatarUrl}`;
     avatarEl.innerHTML = `<img src="${avatarUrl}" alt="Avatar" style="width:100%;border-radius:12px;">`;
 
     // profile link
@@ -85,7 +85,7 @@ async function loadCollectibles(id) {
     countEl.textContent = '0';
     titleEl.textContent = 'Collectibles';
 
-    const res = await getJSON(`${API}https://qnet.zip/apisite/inventory/v1/users/${id}/assets/collectibles`);
+    const res = await getJSON(`${API}https://cartii.fit/apisite/inventory/v1/users/${id}/assets/collectibles`);
     const raw = res?.data || [];
 
     if (!raw.length) {
@@ -106,7 +106,7 @@ async function loadCollectibles(id) {
 
     gridEl.innerHTML = '';
     for (const { item, qty } of grouped.values()) {
-      const thumb = `https://qnet.zip/thumbs/asset.ashx?assetId=${item.assetId}&width=420&height=420&format=png`;
+      const thumb = `https://cartii.fit/thumbs/asset.ashx?assetId=${item.assetId}&width=420&height=420&format=png`;
       const div = document.createElement('div');
       div.className = 'card';
       div.innerHTML = `
