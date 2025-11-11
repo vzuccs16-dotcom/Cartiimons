@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)https://8vjds38.vercel.app/collectibles?user=6 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collectibles • Q-Net</title>
+  <link rel="stylesheet" href="./Collectibles • Q-Net_files/styles.css">
+</head>
+<body class="fade-in collectibles-page">
+  <header class="topbar">
+    <div class="logo logo-collectibles">
+      <img src="./Collectibles • Q-Net_files/logo2.png" alt="Q-Net">
+    </div>
+
+    <nav class="nav-center">
+      <a href="https://8vjds38.vercel.app/home">Home</a>
+      <a href="https://8vjds38.vercel.app/collectibles" class="active">Collectibles</a>
+      <a href="https://8vjds38.vercel.app/rap">RAP Leaderboard</a>
+      <a href="https://8vjds38.vercel.app/gamble">Gamble</a>
+    </nav>
+
+    <a href="https://qnet.zip/home" class="reblox-btn back-home">Back to Home</a>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <div class="panel">
+        <div class="avatar-wrap" id="avatar-wrap"><p style="color:#888;text-align:center;">Error loading user</p></div>
+        <h2 id="displayName" class="username">—</h2>
+        <p id="username" class="subuser">—</p>
+        <p id="status" class="status">—</p>
+        <p id="rap-rank" class="status">RAP Rank: —</p>
+        <p id="desc" class="desc">—</p>
+        <a id="profileLink" class="profile-link" href="https://8vjds38.vercel.app/collectibles?user=6#" target="_blank" rel="noopener">Open Profile ↗</a>
+        <hr class="divider">
+        <form id="userForm" class="sidebar-search">
+          <input id="userIdInput" type="number" placeholder="Enter User ID...">
+          <button type="submit">Load</button>
+        </form>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="main-header">
+        <h2 id="collectiblesTitle">Collectibles</h2>
+        <div id="count" class="count-badge">0</div>
+      </div>
+      <div id="notice" class="notice" hidden=""></div>
+      <div id="grid" class="grid"></div>
+      <div id="loading" class="loading" style="display: block;">Collectibles are not available ( Inventory Private or Q-Net is down. (403) ).</div>
+    </main>
+  </div>
+
+  <div class="footer">© Q-Net • Made with ❤️ by Levi</div>
+
+  <div id="loadingOverlay">
+    <img src="./Collectibles • Q-Net_files/loading.gif" alt="Loading...">
+  </div>
+
+  <script src="./Collectibles • Q-Net_files/script.js.download"></script>
+  <script>
+    document.querySelectorAll("a[href]").forEach(a => {
+      const href = a.getAttribute("href");
+      if (href.startsWith("/") && !href.includes("#")) {
+        a.addEventListener("click", e => {
+          e.preventDefault();
+          document.body.classList.add("fade-out");
+          setTimeout(() => (window.location.href = href), 250);
+        });
+      }
+    });
+  </script>
+
+
+</body></html>
